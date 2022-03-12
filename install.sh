@@ -7,7 +7,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 sudo apt update
 apt-cache policy docker-ce
-sudo apt install docker-ce
+sudo apt -y install docker-ce
 
 echo "Running uashield as a daemon with 2000 requests. This value can be changed according to droplet size"
 docker run -d --restart unless-stopped ghcr.io/opengs/uashield:0.0.x 2000 true
