@@ -9,6 +9,6 @@ It is made for DO Ubuntu droplets
 
 Run script on the Droplet
 ```
-wget https://github.com/PoTHuYJoHN/fck-putin-do-install-script/blob/main/install.sh
+wget https://raw.githubusercontent.com/PoTHuYJoHN/fck-putin-do-install-script/main/install.sh
 sh install.sh
 ```
