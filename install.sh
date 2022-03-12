@@ -13,12 +13,15 @@ echo "Running uashield as a daemon with 2000 requests. This value can be changed
 docker run -d --restart unless-stopped ghcr.io/opengs/uashield:0.0.x 2000 true
 
 echo "Creating script to monitor requests via logs..."
-echo "#!/bin/bash
+
+cat <<EOT >> get_log.sh
+#!/bin/bash
 docker ps -q > containers.id
 while read container
 do
 docker logs -t -f $container | grep --color -P " 200"
-done < containers.id" >> get_log.sh
+done < containers.id
+EOT
 
 echo "Running script to see requests..."
 sh get_log.sh
