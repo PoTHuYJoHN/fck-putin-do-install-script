@@ -19,7 +19,7 @@ cat <<EOT >> get_log.sh
 docker ps -q > containers.id
 while read container
 do
-docker logs -t -f $container | grep --color -P " 200"
+docker logs -t -f \$container | grep --color -P " 200"
 done < containers.id
 EOT
 
